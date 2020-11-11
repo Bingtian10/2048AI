@@ -38,9 +38,11 @@ Following examples are based on building game tree of height 3 on each "player" 
 About half of the time the AI is able to obtain 2048 tile or higher.
 
 Game 1:
+
 ![Game state of 2048 game board](game1.png)
 
 Game 2:
+
 ![Game state of 2048 game board](game2.png)
 
 
