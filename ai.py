@@ -6,10 +6,7 @@ MOVES = {0: 'up', 1: 'left', 2: 'down', 3: 'right'}
 
 class Gametree:
 	"""main class for the AI"""
-	# Hint: Two operations are important. Grow a game tree, and then compute minimax score.
-	# Hint: To grow a tree, you need to simulate the game one step.
-	# Hint: Think about the difference between your move and the computer's move.
-
+	
 	# Constructor that copy the information in the current game state, also constrcut a weightedMatrix
 	def __init__(self, root_state, depth_of_tree, current_score): 
 		self.root_state = root_state
@@ -70,7 +67,7 @@ class Gametree:
 
 	# Function that grow the game state tree
 	def growTree(self, node):
-		if(node.player == "maxPlayer" and node.depth < 3):
+		if(node.player == "maxPlayer" and node.depth < self.depth_of_tree):
 			# Create a list representation of current state
 			current_sim = Simulator(node.score, node.player, copy.deepcopy(node.tileMatrix))
 			current_linear = current_sim.convertToLinearMatrix()
@@ -103,7 +100,7 @@ class Gametree:
 				else:
 					break
 
-		elif(node.player == "chance" and node.depth < 3):
+		elif(node.player == "chance" and node.depth < self.depth_of_tree):
 			emptySpace = 0
 			# Iterate current untouched chance player turn's matrix to count empty space, place tile at each empty space
 			for i in range(len(node.tileMatrix)):
