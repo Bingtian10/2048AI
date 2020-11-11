@@ -33,11 +33,21 @@ To compute the children's score, recursively call minimax2048 on each children.
 best possible score
 
 ## Example
-Following example are based on building game tree of height 5 on each "player" step
+Following examples are based on building game tree of height 3 on each "player" step.
+
+About half of the time the AI is able to obtain 2048 tile or higher.
+
+Game 1:
+![Game state of 2048 game board](game1.png)
+
+Game 2:
+![Game state of 2048 game board](game2.png)
+
+
 
 ## Optimization
 We could use alpha beta pruning the prune the game tree to prevent too much computation
-at each gamestep. 
+at each gamestep. (Yet to implemented)
 
 Also using weighted matrix to give a bias for board to put highest tile on the corner seems
 to work well. In my implementation I put emphasis on the top left corner of the game board.
